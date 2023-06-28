@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +11,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Image Viewer',
@@ -28,10 +27,28 @@ class ImageViewer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      appBar: AppBar(title: Center(child: Text("Image Viewer")),),
-      body: Center(child: Image.asset("assets/Images/nature.jpg",width: 300,)),
+      appBar: AppBar(
+        title: Center(child: Text("Image Viewer")),
+      ),
+      body: Column(
+        children: [
+          Image.asset(
+            "assets/Images/nature.jpg",
+            width: 400,
+          ),
+          Text(
+            "Picture of a tree",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.inter(
+              textStyle: TextStyle(
+                color: Colors.brown,
+                fontSize: 60,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
